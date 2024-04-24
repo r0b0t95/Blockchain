@@ -1,5 +1,6 @@
 from colorama import Fore
 
+
 class Color:
      def __init__( self ):
           self.green = Fore.GREEN

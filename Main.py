@@ -1,24 +1,26 @@
 from Blockchain import Blockchain
 from Block import Block
+import sys
 
-# Create a blockchain instance
-blockchain = Blockchain()
 
-# Create blocks and add them to the blockchain
-block1 = Block({"amount": 4}, blockchain.get_latest_block().hash)
-blockchain.add_block(block1)
+if __name__ == '__main__':
 
-block2 = Block({"amount": 10}, blockchain.get_latest_block().hash)
-blockchain.add_block(block2)
-
-# Test blockchain validity
-#print("Blockchain validity:", blockchain.is_chain_valid())
-
-# Trying to tamper with the blockchain
-#blockchain.chain[1].transactions = {"amount": 100}
-#blockchain.chain[1].hash = blockchain.chain[1].calculate_hash()
-
-#print("Blockchain validity after tampering:", blockchain.is_chain_valid())
-
-print(blockchain.display_chain())
-print(blockchain.last_index())
+     num = ''
+     blockchain = Blockchain() 
+     
+     while True:
+          num = input('type a number: ')
+          if num == '1':
+               blockchain.display_chain()
+          elif num == '2':
+               print(f'Is the chain valid: {blockchain.is_chain_valid()}')
+          elif num == '3':
+               print( blockchain.get_latest_block() )
+          elif num == '4':
+               data = int(input('data: '))
+               block = Block( { 'data': data }, blockchain.get_latest_block().hash )
+               blockchain.add_block( block )
+          else:
+               print( '\n\n [-] Exit... ' )
+               sys.exit(0)
+     
