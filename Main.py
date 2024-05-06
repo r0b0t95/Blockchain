@@ -9,16 +9,16 @@ if __name__ == '__main__':
      blockchain = Blockchain() 
      
      while True:
-          num = input('type a number: ')
+          num = input( 'type a number: ' )
           if num == '1':
                blockchain.display_chain()
           elif num == '2':
-               print(f'Is the chain valid: {blockchain.is_chain_valid()}')
+               print( f'Is the chain valid: { blockchain.is_chain_valid() }' )
           elif num == '3':
                print( blockchain.get_latest_block() )
           elif num == '4':
                data = int(input('data: '))
-               block = Block( { 'data': data }, blockchain.get_latest_block().hash )
+               block = Block( str( data ), blockchain.get_latest_block().get_hash() )
                blockchain.add_block( block )
           else:
                print( '\n\n [-] Exit... ' )
