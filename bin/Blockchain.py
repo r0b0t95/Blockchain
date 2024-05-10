@@ -47,5 +47,3 @@ class Blockchain:
             h += f'{ color.cyan() } Previous Hash: { block.get_previous_hash() } \n'
             h += f'{ color.white() } ${ "-" * 79 }$ { color.reset() }'
             print( h )
-
-

@@ -2,6 +2,7 @@ from Blockchain import Blockchain
 from Block import Block
 import sys
 
+option = ' display chain [1] \n is the chain valid [2] \n get the last block [3] \n add a block [4] \n exit [5] \n TYPE A NUMBER:'
 
 if __name__ == '__main__':
 
@@ -9,7 +10,7 @@ if __name__ == '__main__':
      blockchain = Blockchain() 
      
      while True:
-          num = input( 'type a number: ' )
+          num = input( option )
           if num == '1':
                blockchain.display_chain()
           elif num == '2':
